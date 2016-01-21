@@ -1,0 +1,13 @@
+/.idea
+/.vagrant
+/vendor
+/node_modules
+Homestead.yaml
+Homestead.json
+.env
+.env.testing
+_ide_helper.php
+app/tmp
+
+
+tests/_output/*
