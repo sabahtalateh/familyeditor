@@ -26,7 +26,7 @@
         <div class="form-group">
             {!! Form::label('father_search', 'Отец') !!}
             <span class="error" v-if="!person.father">*</span>
-            {!! Form::text('father_search', '', ['class' => 'form-control', 'placeholder' => 'Отец_ID', 'v-model' => 'person.father', 'v-on:keyup' => "fetchPersons(person.father, 1)"]) !!}
+            {!! Form::text('father_search', '', ['class' => 'form-control', 'placeholder' => 'Отец', 'v-model' => 'person.father', 'v-on:keyup' => "fetchPersons(person.father, 1)"]) !!}
             {!! Form::hidden('father', '', ['v-model' => 'personToAdd.father']) !!}
             <div v-for="item in possible.fathers" class="possible-parents">
                 <h2 class="element" v-on:click="setToForm"><span data-id="@{{ item.id }}" data-role="father"
@@ -38,7 +38,7 @@
         <div class="form-group">
             {!! Form::label('mother_search', 'Мать') !!}
             <span class="error" v-if="!person.mother">*</span>
-            {!! Form::text('mother_search', '', ['class' => 'form-control', 'placeholder' => 'Мать_ID', 'v-model' => 'person.mother', 'v-on:keyup' => "fetchPersons(person.mother, 0)"]) !!}
+            {!! Form::text('mother_search', '', ['class' => 'form-control', 'placeholder' => 'Мать', 'v-model' => 'person.mother', 'v-on:keyup' => "fetchPersons(person.mother, 0)"]) !!}
             {!! Form::hidden('mother', '', ['v-model' => 'personToAdd.mother']) !!}
             <div v-for="item in possible.mothers" class="possible-parents">
                 <h2 class="element" v-on:click="setToForm"><span data-id="@{{ item.id }}" data-role="mother"
@@ -50,7 +50,7 @@
         <div class="form-group">
             {!! Form::label('child_search', 'Отпрыск') !!}
             <span class="error" v-if="!person.child">*</span>
-            {!! Form::text('child_search', '', ['class' => 'form-control', 'placeholder' => 'Отпрыск_ID', 'v-model' => 'person.child', 'v-on:keyup' => "fetchPersons(person.child)"]) !!}
+            {!! Form::text('child_search', '', ['class' => 'form-control', 'placeholder' => 'Отпрыск', 'v-model' => 'person.child', 'v-on:keyup' => "fetchPersons(person.child)"]) !!}
             {!! Form::hidden('child', '', ['v-model' => 'personToAdd.child']) !!}
             <div v-for="item in possible.children" class="possible-parents">
                 <h2 class="element" v-on:click="setToForm"><span data-id="@{{ item.id }}" data-role="child"
