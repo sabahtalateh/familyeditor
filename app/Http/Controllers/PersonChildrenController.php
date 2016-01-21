@@ -19,7 +19,19 @@ class PersonChildrenController extends Controller
     public function store(Requests\StorePersonChildrenRequest $request)
     {
         $childId = $request->get('child');
-        Person::find($childId)->makeChild($request->get('father'), $request->get('mother'));
+        $fatherId = $request->get('father');
+        $motherId = $request->get('mother');
+
+        // Check if persons in the same family
+        $fathersFamily = Person::find($childId)->family_id;
+        $mothersFamily = Person::find($fatherId)->family_id;
+        $childFamily = Person::find($motherId)->family_id;
+
+        if ($fathersFamily == $childFamily and $mothersFamily == $childFamily) {
+            return \Redirect::back()->withErrors(['Потомок уже находится в одной семье с родителями']);
+        }
+
+        Person::find($childId)->makeChild($fatherId, $motherId);
 
         return \Redirect::route('person.gentree.show', $childId);
     }
