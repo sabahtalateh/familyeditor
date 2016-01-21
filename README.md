@@ -2,6 +2,8 @@
 
 Тестовое задание для livetex демо как что делать тут https://www.youtube.com/watch?v=T7XRjXnxedY&feature=youtu.be&hd=1
 
+Потыкать можно тут http://46.181.64.74:8080/gentree/6
+
 ## Как запустить на локальной машине
 ### Способ запуска с ипользванием Vagrant
 - Установите Virtualbox https://www.virtualbox.org/wiki/Downloads
